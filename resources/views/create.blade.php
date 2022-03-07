@@ -8,6 +8,9 @@
         <div class="mb-3">
             <textarea class="form-control" name="content" rows="3" placeholder="ここにメモを入力してください"></textarea>
         </div>
+        @error('content')
+            <div class="alert alert-danger">メモ内容を入力してください</div>
+        @enderror
         @foreach($tags as $t)
             <input class="form-check-input" type="checkbox" name="tags[]" id="{{ $t['id'] }}" value="{{ $t['id'] }}">
             <label class="form-check-label" for="{{ $t['id'] }}">{{ $t['name'] }}</label>
